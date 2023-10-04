@@ -111,6 +111,63 @@ a {
     
     
 }
+.opciones{
+    display: none;
+}
+
+.elemento:hover .opciones{
+    display: block;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+
+}
+.opciones__elementos{
+
+   display: flex;
+   flex-direction: column;
+   
+   justify-content: space-between;
+  height: 100%;
+}
+
+.opciones-superior{
+   
+    display: flex;
+    padding: .9rem .5rem;
+    gap: .5rem;
+    justify-content: space-between;
+   
+    
+}
+.pines,.boton-guardar{
+    color: #fff;
+    font-size: .8rem;
+}
+.boton-guardar{
+    
+    background-color: red;
+    padding: .5rem .2rem;
+    border-radius: 20px;
+}
+.opciones-inferior{
+    display: flex;
+    justify-content: flex-end;
+}
+.boton-inferior{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: .4rem .2rem;
+    padding: .2rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
 @media (max-width:768px ) {
     .buscar__icono{
         display: block;
