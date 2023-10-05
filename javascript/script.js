@@ -6,7 +6,7 @@ function nearBottomOfPage() {
     return window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100;
 }
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     if (nearBottomOfPage() && !isLoading) {
         isLoading = true;
         agregarImagen();  // Llamada a función que cargará más contenido
@@ -14,7 +14,7 @@ window.addEventListener('scroll', function() {
 });
 function agregarImagen() {
 
-  
+
     var columnas = document.getElementsByClassName('columna-principal');
 
 
@@ -32,8 +32,8 @@ function agregarImagen() {
             const padre = document.createElement('div');
             padre.classList.add('opciones');
 
-            // Suponemos que ya tienes una referencia al padre. Por ejemplo:
             
+
 
             // Crear el contenedor principal .opciones__elementos
             const divElementos = document.createElement('div');
@@ -73,9 +73,15 @@ function agregarImagen() {
             aSvg1.href = '#';
             const svg1 = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
             svg1.setAttribute('class', 'icon icon-tabler icon-tabler-dots');
+
             svg1.setAttribute('width', '16');
             svg1.setAttribute('height', '16');
             svg1.setAttribute('viewBox', '0 0 24 24');
+
+            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            path.setAttribute('d', 'M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0');
+            svg1.appendChild(path);
+
             // ... Agregar los paths y otros atributos para svg1 ...
             divBoton1.appendChild(aSvg1);
             aSvg1.appendChild(svg1);
@@ -105,7 +111,7 @@ function agregarImagen() {
             divPrincipal.appendChild(padre);
 
             columnas[j].appendChild(divPrincipal);
-            
+
             console.log("La página ha sido cargada" + j);
         }
         isLoading = false;
